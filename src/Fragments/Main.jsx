@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
   const [savedata, setSaveData] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const data = localStorage.getItem("datablog");
@@ -18,10 +17,6 @@ const Blog = () => {
       }
     }
   }, []);
-
-  const handleAddData = () => {
-    navigate("/admin");
-  };
 
   return (
     <div className="md:mx-20">
@@ -39,14 +34,7 @@ const Blog = () => {
             );
           })
         ) : (
-          <div className="text-center w-full flexjustify-center my-52">
-            <button
-              onClick={handleAddData}
-              className="bg-blue-500 text-white p-2 rounded-md"
-            >
-              TAMBAH DATA
-            </button>
-          </div>
+          <div className="text-center w-full flexjustify-center my-52"></div>
         )}
       </div>
     </div>
